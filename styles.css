@@ -1,0 +1,66 @@
+@font-face {
+    font-family: Gotham Rounded;
+    src: url(./gotham.otf) format("opentype");
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image: radial-gradient(circle farthest-corner at 50.4% 50.5%, rgba(251, 32, 86, 1) 0%, rgba(135, 2, 35, 1) 90%);
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid>button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    outline: none;
+    background-color: black;
+    color: white;
+}
+
+.calculator-grid>button:hover {
+    background-color: rgb(75, 70, 70);
+}
+
+.size-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-value {
+    color: rgb(75, 70, 70);
+    font-size: 1.5rem;
+}
+
+.output .current-value {
+    color: black;
+    font-size: 2.5rem;
+}
